@@ -1,0 +1,7 @@
+console.log("anything") for console print
+document.write("anything") for write on webpage
+// for single line comment
+
+/*
+    multi-line comment
+*/

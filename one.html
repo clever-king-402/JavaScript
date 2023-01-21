@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        console.log("hello world")
+        document.write('hello world')
+
+        // this is single line comment
+
+        /*
+            This is multi-line comment
+        */
+        // type of variable declaration  //let var const
+        // variable data store
+        //ES6
+        var name = 'ranjit';
+        console.log(name);
+        
+        //Data Type  //string // number //boolean // undefined // null // symbol //bigInt //array // object
+        console.log(typeof(name));
+
+        age = 26.4;
+        console.log(typeof(age));
+
+        work = true;
+        console.log(typeof(work));
+
+        var work1;
+        console.log(typeof(work1));
+
+        var bcd = null;
+        console.log(typeof(bcd));
+
+        var a = Symbol('ranjit');
+        var b =Symbol('ranjit'); // symbol makes unique
+        console.log(a==b);
+
+        var c = 123456789101112131415;
+        console.log(BigInt(c));
+
+        var frnd = ['ram','sita'];
+        console.log(frnd);
+        console.log(frnd.length);
+        console.log(frnd[1]);
+
+        var frnd1 = {
+            id:'1',
+            name : 'ranjit',
+            roll : '13'
+        }
+        console.log(frnd1);
+
+        //let use
+        let   hello =30;
+        console.log(name);
+        if(true){
+            let hello = 20;
+            console.log(hello);
+        }
+        console.log(hello);
+
+
+        // let not redeclaration but reassign
+        let namex = 'ran';
+        console.log(name);
+         name = 'san'
+        console.log(name);
+
+
+        //const
+        const help = 'helppp';
+        console.log(help);
+        help = 'nohelp'; // no reassigning
+        
+    </script>
+</body>
+</html>
