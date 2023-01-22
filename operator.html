@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Arthimatic Operator :- + , - , / , * , % , ++ , -- , ** <br>
+    Comparison Operator : == , === , < , > <br>
+    Logical Operator : - || ,  && , !<br>
+    Assignment Operator : -  - = , += , -=, *= , all of above<br>
+    Conditional Operator Ternary Operator : - (a>b)?"true":"flase"<br>
+    String Operator , +;
+    <script>
+        var a,b;
+        a= 3;
+        b = 3;
+        console.log("a + b = "+(a+b));
+        console.log("a - b = ",a-b);
+        console.log("a * b ", a*b);
+
+        var num1,num2;
+        // num1 = Number( prompt("Enter one number : "));
+        // num2 = Number(prompt("Enter another one ; "));
+        // console.log("the sum is ",+num1 + +num2);
+        // console.log(a++); // a = a + 1 // 2
+        // console.log(a++) // a = a + 1 // 3
+        // console.log(a) // 4
+        // console.log(a**b);
+        // console.log(a+=b);
+
+        var c= '3';
+        console.log(a==c) // true check value
+        console.log(a===c) // false check data type
+        console.log(a>c);
+        var x=true ; 
+        var y=false ;
+        console.log(x && y);
+        console.log(x || y);
+        console.log(!x)
+
+        console.log((2>3)?"print":"flaff");
+
+        var age = 17;
+        if(age>18){
+            document.write("<h1>You'r very eligible. </h1>")
+        }
+        else if(age == 17){
+            document.write("you should wait one year")
+        }
+        else{
+            document.write("not eligible")
+        }
+
+        var marks=Number(prompt("Enter Your Marks : "))
+        if(marks >= 80)
+       document.write("distriction")
+        else if(marks >= 60)
+        document.write("first distriction ")
+        else if(marks >= 40 )
+        document.write("Just Pass")
+        else
+        document.write("Fail")
+
+
+        //string operator
+        var fname = 'ranjit' ;
+        var lname = 'thakur';
+        var age  = 16;
+        document.write('Hello i am ' + fname + " " + lname , " and i am " + age + 'old')
+    </script>
+</body>
+</html>
