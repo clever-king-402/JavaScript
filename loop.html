@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    for <br>
+    while <br>
+    do while <br>
+    for in <br>
+    for of <br>
+    break; continuous <br>
+    <select name="year" id="year" size="3" over>
+        <script>
+            for(var i = 1999;i<=2090;i++){
+                document.write("<option value="+ i +">", i ,"</option>")
+            }
+        </script>
+    </select>
+    <script>  
+
+    //for loop
+        document.write("<h3> Loop Start </h3>")
+        for(var a=0;a<10;a++){
+            document.write("<h4>", a ,"</h4>")
+        }
+        document.write("<h3> Loop Stop</h3>")
+      
+    </script>
+    <hr>
+    <script>
+
+        //while loop
+        var aa=0;
+        while(aa<=10){
+            document.write("<h4> hello ",aa,"</h4>");
+            aa++;
+        }
+
+    </script>
+    <hr>
+    <script>
+        //do while
+        var abc = 0;
+        do{
+            document.write("<h4> do while ", abc,"</h4>");
+            abc++;
+        }while(abc<=10)
+
+    </script>
+
+    <hr>
+    <h2>for of</h2>
+    <script>
+        var frnd = ['umesh','jasman','mission','ranjit','krishna']
+        for( f of frnd ){
+            document.write(f,"<br>");
+        }
+    </script>
+    <hr>
+    <h2>for in</h2>
+    <script>
+        var frnd = ['umesh','jasman','mission','ranjit','krishna']
+        for( const f in frnd ){
+            document.write(f,"<br>");
+        }
+    </script>
+    <hr>
+    <!-- <script>
+        var row = Number(prompt("enter the no. of rows : "))
+        var col = Number(prompt("enter the no. of column : ")) -->
+    <!-- </script> -->
+</body>
+</html>

@@ -5,3 +5,12 @@ document.write("anything") for write on webpage
 /*
     multi-line comment
 */
+
+switch()
+
+console.log("${3}")
+
+for in
+for of
+
+prompt
