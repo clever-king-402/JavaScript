@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var sub = ['Nepali','Math','Social'];
+        document.write(sub[0]+ '<br>')
+        document.write(sub[1] + '<br>')
+        document.write(sub.length+ '<br>')
+
+        for(var a=0;a<sub.length;a++){
+            document.write(sub[a] + '<br>');
+        }
+
+        for(var abcx of sub){
+            document.write(abcx + '<br>');
+        }
+        document.write(sub.sort() +'<br>')
+        document.write(sub.reverse())
+        document.write(sub.pop()) // this removes and display item
+        document.write(sub.push('cat'))// this place the name item
+        document.write(sub.shift())// remves the  first data
+        document.write('<br>' + sub )// this removes the name item
+        document.write(sub.unshift('aaaa')) // this add data at first
+
+        var age=[1,2,3,4]
+        var age1 = [2,3,4,5]
+        document.write(age.join("-") + '<br>') //join case
+        document.write(age.concat(age1)+ '<br>') //join case
+
+        //important find filter map
+
+        let ag = [20,30,405,10,1,2,4,2,2,2,2,2,]
+        let ww = ag.map(qwe)
+        function qwe(a){
+            console.log('jelk')
+            return a+20;
+        }
+        console.log(ww)
+        let agx = [20,30,405,10,1,2,4,2,2,2,2,2,]
+        let wxw = agx.filter(qwex)
+        function qwex(ab){
+            console.log('jelk')
+            return ab>20;
+        }
+        console.log(wxw)
+        let agxs = [20,30,405,10,1,2,4,2,2,2,2,2,]
+        let wxws = agxs.find(qwesx)
+        function qwesx(abc){
+            console.log('jelk')
+            return abc>20;
+        }
+        console.log(wxws)
+    </script>
+</body>
+</html>

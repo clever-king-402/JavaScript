@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Function Declaration <br>
+
+    <script>
+        //method 1
+        function abc(){
+            document.write("this is normal function")
+        }
+        abc();
+        abc();
+
+        //method 2 function expresion
+        var ab = function(){
+            document.write("this si very good");
+        }
+        ab();
+
+        function square(a){ // parament
+            return a*a;
+        }
+        document.write(square(4)) //argument
+        document.write(square(40))
+        
+        function wlc(name,phone=984432){
+            document.write("my name is "+name +" and phoen "+phone)
+        }
+        wlc('ranjit',9944)
+        wlc('make')
+
+
+        //arrow function //method 3
+
+        var dd=()=>{
+            document.write("<br>arrow functino")
+            return 'hello'
+        }
+        dd()
+    </script>
+</body>
+</html>
