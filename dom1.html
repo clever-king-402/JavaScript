@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <h1>Hello Nepal</h1>
+    </div>
+    <button onclick="abc()">Hide</button>
+    <button onclick="document.getElementById('demo').style.display='block'">show</button>
+    <button onclick="document.getElementById('demo').style.color='purple'">color</button>
+    <button onclick="document.getElementById('demo').style.marginLeft='200px'">Margin</button>
+    <button onclick="document.getElementById('demo').style.marginLeft='00px'">rightMargin</button>
+    <br>
+    <div id="hell">
+        <h1>helo Nepal</h1>
+    </div>
+    <button onclick="hideSeek()" id="buttonx">Hide</button>
+    <script>
+        function abc(){
+            document .getElementById('demo').style.display='none'
+        }
+        function hideSeek(){
+            if(document.getElementById('hell').style.display=='block'){
+                document.getElementById('hell').style.display='none';
+                document.getElementById('buttonx').innerText = 'Show';
+            }
+            else{
+                document.getElementById('hell').style.display='block';
+                console.log('hiiasf');
+                document.getElementById('buttonx').innerText = 'Hide';
+            }
+        }
+    </script>
+</body>
+</html>
