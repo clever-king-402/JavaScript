@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .cc{background-color: red;}
+        #bar > div{width: 20px; height: 2px ;background-color: black; margin: 3px 0;}
+        .cross{border: 5px solid black; width: 0px; height: 0px;}
+    </style>
+</head>
+<body>
+    <div id="btn"><h1>Hello</h1></div>
+    <button id="aa">AddClass</button>
+    <!-- /*'mousedown': triggered when the mouse button is pressed down on an element
+    'mouseup': triggered when the mouse button is released on an element
+    'mousemove': triggered when the mouse pointer moves over an element
+    'mouseover': triggered when the mouse pointer enters an element
+    'mouseout': triggered when the mouse pointer leaves an element
+    'keydown': triggered when a key on the keyboard is pressed down
+    'keyup': triggered when a key on the keyboard is released
+    'submit': triggered when a form is submitted
+    'load': triggered when a page or image is finished loading
+    'resize': triggered when the browser window is resized
+    'input': triggered when the value of an input element changes -->
+    <script>
+        document.getElementById('aa').addEventListener('mouseover',abc);
+        function abc(){
+            document.getElementById('btn').classList.toggle('cc'); // add , remove , toggle
+        }
+        
+
+            // alert('Your succed')
+    </script>
+</body>
+</html>
