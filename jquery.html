@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    JQuery <hr>
+    $('selector').action() <hr>
+    <h1>Hello World</h1>
+    <hr>
+    <button class="btn">Hide this</button>
+    <button id="btn">Show this</button>
+    <button id="toggle">Toggle this</button>
+    <hr>
+    <button id="fadeOut">FadeOut this</button>
+    <button id="fadeIn">FadeIn this</button>
+    <button id="fade">Fade this</button>
+    <hr>
+    <button id="slideUp">SlideUp this</button>
+    <button id="slideDown">slideDown this</button>
+    <button id="slideToggle">slideToggle this</button>
+    <hr>
+    <button id="append">Append hello</button>
+    <button id="prepend">Prepend hello</button>
+    <hr>
+    <button id="after">After hello</button>
+    <button id="before">before hello</button>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // $("h1").hide()
+        $('.btn').click(function(){$("h1").hide()})
+        $('#btn').click(function(){$("h1").show()})
+        $('#toggle').click(function(){$("h1").toggle()})
+        $('#fadeOut').click(function(){$("h1").fadeOut('2000')})
+        $('#fadeIn').click(function(){$("h1").fadeIn('2000')})
+        $('#fade').click(function(){$("h1").fadeToggle('2000')})
+        $('#slideUp').click(function(){$("h1").slideUp('2000')})
+        $('#slideDown').click(function(){$("h1").slideDown('2000')})
+        $('#slideToggle').click(function(){$("h1").slideToggle('2000')})
+        $('#append').click(function(){$("h1").append('hello')})
+        $('#prepend').click(function(){$("h1").prepend('hello')})
+        $('#after').click(function(){$("h1").after('hello')})
+        $('#before').click(function(){$("h1").before('hello')})
+    </script>
+</body>
+</html>

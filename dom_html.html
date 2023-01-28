@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img src="dark.jpg" alt="" width="500px" height="500px" id="image">
+    <button id="btn">change</button>
+    <hr>
+    <hr>
+    PassWord : <input type="password" name="logpass" id="pass">
+    <button id="show">Show Password</button>
+    <hr>
+    <hr>
+    <h2 title="hellow" id="h2">HEllo Mission Yadav</h2>
+    <script>
+        document.getElementById('btn').addEventListener('click',abc)
+        x=0;
+        function abc(){
+            if(x==0){
+            document.getElementById('image').src='darkp2.jpg';
+            x++;
+            }
+            else{
+                document.getElementById('image').src='dark.jpg';
+                x=0;
+            }
+            
+        }
+
+        document.getElementById('show').addEventListener('click',showPass)
+        function showPass(){    
+            
+            if(document.getElementById('show').innerText == 'Show Password'){
+                document.getElementById('pass').type= 'text';
+                document.getElementById('show').innerText = 'Hide Pass';
+            }
+            else{
+                document.getElementById('pass').type= 'password';
+                document.getElementById('show').innerText = 'Show Password'
+            }
+        }
+        document.getElementsByTagName('h2')[0].title = 'rams'
+    </script>
+</body>
+</html>
