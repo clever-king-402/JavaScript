@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{height: 2000px;}
+        .red{background-color: red;}
+        header{background-color: orange;padding: 0px;}
+        .fix{position:sticky; top: 0;left: 0; background-color: hotpink;width: 100%;height: 150px;
+            animation: fadeIn .82s linear  ;
+        }
+        @keyframes fadeIn {
+            0%{transform: translateY(-100%);}
+            100%{transform: translate(0%);}
+        }
+    </style>
+</head>
+<body>
+    <h2>Hello World</h2>
+    <button id="ac">AddClass</button>
+    <button id="rc">RemoveClass</button>
+    <button id="tc">ToggleClass</button>
+    <button id="rv">Remove</button>
+    <button id="mt">Empty</button>
+
+    <hr>
+    <hr>
+    <header>
+        <img src="imageDark.jpg" alt="" width="200px" height="200px" id="pic">
+    </header>
+    <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
+    <script>
+        $('#ac').click(function(){
+            $('h2').addClass('red');
+        });
+        $('#rc').click(function(){
+            $('h2').removeClass('red');
+        });
+        $('#tc').click(function(){
+            $('h2').toggleClass('red');
+        });
+        $('#rv').click(function(){
+            $('h2').remove()
+        });
+        $('#mt').click(function(){
+            $('h2').empty()
+        });
+
+        //hello
+
+        $(window).scroll(function(){
+            if($(this).scrollTop() > 150){
+                $('header').addClass('fix')
+                document.getElementById('pic').style.width='100px';
+                document.getElementById('pic').style.height='100px';
+
+            }
+            else{
+                $('header').removeClass('fix')
+                document.getElementById('pic').style.width='300px';
+                document.getElementById('pic').style.height='300px';
+            }
+
+        })
+    </script>
+</body>
+</html>
