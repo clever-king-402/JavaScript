@@ -14,3 +14,30 @@ for in
 for of
 
 prompt
+
+can chage attribte class toggle value tag
+except getelementsbyid all use indexing
+
+slider js using
+owl caroue1  https://owlcarousel2.github.io/OwlCarousel2/
+swipper slider https://swiperjs.com/
+slick slider https://kenwheeler.github.io/slick/
+bxslider https://bxslider.com/
+nivo slider js
+
+animation using
+aos
+wow animation
+
+
+pop up for gallary
+magnific popup animation  https://dimsemenov.com/plugins/magnific-popup/
+fancybox
+lightbox
+
+counter 
+odometer js https://github.hubspot.com/odometer/docs/welcome/
+Counter Up https://github.com/bfintal/Counter-Up
+
+filter
+isotope https://isotope.metafizzy.co/
