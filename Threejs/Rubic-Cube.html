@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.149.0/three.min.js" integrity="sha512-6p9lGA4Cm89KiwN1CixiOVQU2H9e13LeYoN6/Hj/qoUhtrMW5vNiqQz9Z96Z7/I8u89ghL6SPBz9na5HFVzF3g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+		
+    <script>
+        const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const renderer = new THREE.WebGLRenderer();
+
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Next, we create a 3x3 Rubik's Cube
+const cubeSize = 1;
+const cubeSpacing = 0.1;
+const cubeGeometry = new THREE.BoxGeometry(cubeSize, cubeSize, cubeSize);
+const colors = [0xff0000, 0x00ff00, 0x0000ff, 0xffff00, 0xff00ff, 0x00ffff];
+
+// Create an array of six materials, one for each face of the cube
+const cubeMaterials = colors.map(color => new THREE.MeshBasicMaterial({ color }));
+
+for (let x = 0; x < 3; x++) {
+  for (let y = 0; y < 3; y++) {
+    for (let z = 0; z < 3; z++) {
+      const cube = new THREE.Mesh(cubeGeometry, cubeMaterials);
+      cube.position.set(
+        (x - 1) * (cubeSize + cubeSpacing),
+        (y - 1) * (cubeSize + cubeSpacing),
+        (z - 1) * (cubeSize + cubeSpacing)
+      );
+      scene.add(cube);
+    }
+  }
+}
+
+// Finally, we add the mesh to the scene and adjust the camera position
+camera.position.z = 5;
+
+// Animate the Rubik's Cube by rotating it on its axis
+function animate() {
+  requestAnimationFrame(animate);
+//   scene.rotation.x += 0.01;
+//   scene.rotation.y += 0.01;
+  renderer.render(scene, camera);
+}
+animate();
+
+// Track the cursor position and rotate the cube accordingly
+const mouse = new THREE.Vector2();
+document.addEventListener('mousemove', event => {
+  mouse.x = (event.clientX / window.innerWidth) * 2 - 1;
+  mouse.y = -(event.clientY / window.innerHeight) * 2 + 1;
+  scene.rotation.x = mouse.y * 2;
+  scene.rotation.y = mouse.x * 2;
+});
+    </script>
+</body>
+</html>
