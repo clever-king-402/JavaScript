@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .game-board {
+            width: 400px;
+            height: 400px;
+            margin: 0 auto;
+            position: relative;
+            background-color: #EEE;
+        }
+
+        .snake {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            position: absolute;
+        }
+
+        .food {
+            width: 20px;
+            height: 20px;
+            background-color: red;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <div class="game-board" id="game-board">
+        <div class="snake" id="snake"></div>
+        <div class="food" id="food"></div>
+    </div>
+
+    <script>
+        const gameBoard = document.getElementById('game-board');
+        const snakeBody = document.getElementById('snake');
+        const food = document.getElementById('food');
+
+        let snakeX = 0;
+        let snakeY = 0;
+        let foodX = 0;
+        let foodY = 0;
+        let score = 0;
+
+        function updateScore() {
+            document.getElementById('score').innerText = `Score: ${score}`;
+        }
+
+        function resetGame() {
+            snakeX = 0;
+            snakeY = 0;
+            foodX = Math.floor(Math.random() * 20) * 20;
+            foodY = Math.floor(Math.random() * 20) * 20;
+            score = 0;
+            updateScore();
+        }
+
+        function moveSnake(dx, dy) {
+            snakeX += dx;
+            snakeY += dy;
+            snakeBody.style.left = `${snakeX}px`;
+            snakeBody.style.top = `${snakeY}px`;
+        }
+
+        function checkCollision() {
+            if (snakeX === foodX && snakeY === foodY) {
+                foodX = Math.floor(Math.random() * 20) * 20;
+                foodY = Math.floor(Math.random() * 20) * 20;
+                food.style.left = `${foodX}px`;
+                food.style.top = `${foodY}px`;
+                score += 10;
+                updateScore();
+            }
+        }
+
+        function handleKeyPress(event) {
+            switch (event.code) {
+                case 'ArrowUp':
+                    moveSnake(0, -20);
+                    break;
+                case 'ArrowDown':
+                    moveSnake(0, 20);
+                    break;
+                case 'ArrowLeft':
+                    moveSnake(-20, 0);
+                    break;
+                case 'ArrowRight':
+                    moveSnake(20, 0);
+                    break;
+            }
+            checkCollision();
+        }
+
+        resetGame();
+        updateScore();
+        document.addEventListener('keydown', handleKeyPress);
+    </script>
+</body>
+</html>
