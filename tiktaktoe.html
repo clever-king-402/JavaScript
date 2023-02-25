@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tik-Tak-Toe</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{background-color: #313c47;}
+        .game{width: 300px;height: 400px;margin: 250px auto;color: white;}
+        h1,h4{text-align: center;}
+        .box{width: 100%;margin-top: 20px;}
+        .row{display: flex;justify-content: center;align-items: center;}
+        button{width: 75px;height: 75px;margin: 5px;font-size: 20px;}
+    </style>
+</head>
+<body>
+    <div class="game">
+        <h1>Tik-Tae-Toe</h1>
+        <h4 id="show">Now Its Move of : <span id="turn">X</span></h4>
+        <div class="box" id="box">
+            <div class="row">
+                <button onclick="myAction(0)"></button>
+                <button onclick="myAction(1)"></button>
+                <button onclick="myAction(2)"></button>
+            </div>
+            <div class="row">
+                <button onclick="myAction(3)"></button>
+                <button onclick="myAction(4)"></button>
+                <button onclick="myAction(5)"></button>
+            </div>
+            <div class="row">
+                <button onclick="myAction(6)"></button>
+                <button onclick="myAction(7)"></button>
+                <button onclick="myAction(8)"></button>
+            </div>
+        </div>
+    </div>
+    <script>
+        pos = Array(9).fill(null);
+        turn = true;
+        win = false
+        winingPos = [
+            [0,1,2],
+            [3,4,5],
+            [6,7,8],
+            [0,3,6],
+            [1,4,7],
+            [2,5,8],
+            [0,4,8],
+            [2,4,6]
+        ]
+        function myAction(value){
+            if(pos[value] == null && win === false){
+                chance = turn?'X':'0';
+                pos[value] = chance;
+                document.getElementsByTagName('button')[value].innerText = chance;
+                for(var i of winingPos){
+                    [a,b,c] = i;
+                    if(pos[a] && pos[a]=== pos[b] && pos[a]=== pos[c]){
+                        document.getElementById('show').innerText = chance + " Won the game";
+                        win = true;
+                        document.getElementById('box').style.backgroundColor = '#18ea18';
+                        return;
+                    }
+                }
+                turn=!turn;
+                document.getElementById('turn').innerText = turn?'X':'0';
+            }
+        }
+    </script>
+</body>
+</html>
