@@ -2,107 +2,107 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Snake Game</title>
+    <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        .game-board {
-            width: 400px;
-            height: 400px;
-            margin: 0 auto;
-            position: relative;
-            background-color: #EEE;
-        }
-
-        .snake {
-            width: 20px;
-            height: 20px;
-            background-color: green;
-            position: absolute;
-        }
-
-        .food {
-            width: 20px;
-            height: 20px;
-            background-color: red;
-            position: absolute;
-        }
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        .box{width: 500px;height: 500px;margin: 100px auto;background-color: #ccc;position: relative;}
+        .snake{width: 25px;height: 25px;background-color: rgb(34, 203, 34);position: absolute;z-index: 1;}
+        .food{width: 25px;height: 25px;background-color: rgb(255, 255, 0);position: absolute;z-index: 0;top: 50px;left: 50px;}
     </style>
 </head>
 <body>
-    <div class="game-board" id="game-board">
+    <div class="box">
         <div class="snake" id="snake"></div>
         <div class="food" id="food"></div>
     </div>
-
     <script>
-        const gameBoard = document.getElementById('game-board');
-        const snakeBody = document.getElementById('snake');
+        //Game Work
+        let step = 25;
+        let move = [0,0]; //left right top bottom
+        let direction = 'left'; //left right top bottom
+        const snake = document.getElementById('snake');
+        snake.style.left = "0px";
+        snake.style.top = "0px";
         const food = document.getElementById('food');
+        food.style.left = "100px";
+        food.style.top = "100px";
 
-        let snakeX = 0;
-        let snakeY = 0;
-        let foodX = 0;
-        let foodY = 0;
-        let score = 0;
 
-        function updateScore() {
-            document.getElementById('score').innerText = `Score: ${score}`;
-        }
+        // motion Work
+        function animate(){
 
-        function resetGame() {
-            snakeX = 0;
-            snakeY = 0;
-            foodX = Math.floor(Math.random() * 20) * 20;
-            foodY = Math.floor(Math.random() * 20) * 20;
-            score = 0;
-            updateScore();
-        }
-
-        function moveSnake(dx, dy) {
-            snakeX += dx;
-            snakeY += dy;
-            snakeBody.style.left = `${snakeX}px`;
-            snakeBody.style.top = `${snakeY}px`;
-        }
-
-        function checkCollision() {
-            if (snakeX === foodX && snakeY === foodY) {
-                foodX = Math.floor(Math.random() * 20) * 20;
-                foodY = Math.floor(Math.random() * 20) * 20;
-                food.style.left = `${foodX}px`;
-                food.style.top = `${foodY}px`;
-                score += 10;
-                updateScore();
+            //Working With gameOver
+            if(move[0]<0  || move[0]>500){
+                move.fill(0);
+                direction='none';
+                alert("game Over");
             }
-        }
+            if(move[1]<0  || move[1]>500){
+                move.fill(0);
+                direction='none';
+                alert("game Over");
+            }
 
-        function handleKeyPress(event) {
-            switch (event.code) {
-                case 'ArrowUp':
-                    moveSnake(0, -20);
+            switch(direction){
+                case 'left':
+                    snake.style.left = move[0] + 'px';
+                    move[0] +=step;
                     break;
-                case 'ArrowDown':
-                    moveSnake(0, 20);
+                case 'right':
+                    snake.style.left =move[0] + 'px';
+                    move[0] -=step;
                     break;
-                case 'ArrowLeft':
-                    moveSnake(-20, 0);
+                case "up":
+                    snake.style.top =move[1] + 'px';
+                    move[1] +=step;
                     break;
-                case 'ArrowRight':
-                    moveSnake(20, 0);
+                case "down":
+                    snake.style.top =move[1] + 'px';
+                    move[1] -=step;
                     break;
             }
             checkCollision();
+
+            
+            // setTimeout(animate,500);
+        }
+        animate()
+
+        //button Press check
+        document.addEventListener("keydown",(event)=>{checkKey(event)});
+        function checkKey(event){
+            switch(event.code){
+                case 'ArrowRight':
+                    direction = 'left';
+                    break;
+                case 'ArrowLeft':
+                    direction = 'right';
+                    move[0] -=step;
+                    break;
+                case 'ArrowUp':
+                    direction = 'down';
+                    break;
+                case 'ArrowDown':
+                    direction = 'up';
+                    break;
+            }
         }
 
-        resetGame();
-        updateScore();
-        document.addEventListener('keydown', handleKeyPress);
+
+        // checking The Collision
+        function checkCollision(){
+            if(snake.style.left === food.style.left &&  snake.style.top=== food.style.top){
+                x = Math.floor(Math.random() * 20) *25;
+                y = Math.floor(Math.random() * 20) * 25;
+                food.style.left = x + 'px';
+                food.style.top = y + 'px';
+                console.log(food.style.left,food.style.top);
+
+            }
+           
+        }
     </script>
 </body>
 </html>
